@@ -31,6 +31,6 @@ const app = async () => {
     else {
         console.log("Wrong Command Loser!")
     }
-}
+};
 
 app()
