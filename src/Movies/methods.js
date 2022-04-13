@@ -48,6 +48,14 @@ exports.find = async () => {
 			})
 			console.log(findThis);
 		}
+		else if (argv.genre) {
+			const findThis = await Film.findAll({
+				where: {
+					year: argv.genre
+				}
+			})
+			console.log(findThis);
+		}
 		else {
 			console.log('Nothing to find, lmao!')
 		}
@@ -79,6 +87,13 @@ exports.update = async () => {
 				}
 			})
 		}
+		else if (argv.newGenre) {
+            await Film.update ({ actor: argv.newGenre}, {
+                where: {
+                    actor: argv.genre,
+                }
+            });
+		}
 		else {
 			console.log("update error");
 		}
@@ -107,6 +122,13 @@ exports.deleteOne = async () => {
 			await Film.destroy({
 				where: {
 					year: argv.year
+				}
+			})
+		}
+		else if (argv.genre) {
+			await Film.destroy({
+				where: {
+					year: argv.genre
 				}
 			})
 		}

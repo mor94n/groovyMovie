@@ -9,7 +9,7 @@ const app = async () => {
             name: argv.title,
             actor: argv.actor,
             year: argv.year,
-            season: argv.season
+            genre: argv.genre
         }
         await addFilm(filmObj)
     }

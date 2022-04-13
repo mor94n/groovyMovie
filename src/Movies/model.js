@@ -12,6 +12,10 @@ const Film = sequelize.define('Movie', {
     },
     year: {
         type : DataTypes.INTEGER,
+    },
+    genre: {
+        type: DataTypes.STRING,
+        allowNull : false
     }
 })
 
